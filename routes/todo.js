@@ -71,7 +71,7 @@ Router.get("/", auth, async (req, res) => {
     try {
         const todos = await Todo.find({
             user: req.user.id
-        }).select("-user").select("-createdAt")
+        }).select("-user").select("-createdAt").select("-v")
         res.send(todos)
     } catch (e) {
         console.log(e)
