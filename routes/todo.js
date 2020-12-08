@@ -7,7 +7,7 @@ Router.post("/", auth, async (req, res) => {
         title,
         description
     } = req.body;
-    if ((!title, !description))
+    if ((!title || !description))
         return res.status(400).send({
             msg: "Enter All Fields"
         });
